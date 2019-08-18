@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AtCoder Marathon Ranking</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		body {
+			margin: 10px;
+		}
+		div.container {
+			max-width: 600px;
+		}
+		span.username {
+			font-weight: bold;
+		}
+		td {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>AtCoder Marathon Ranking</h1>
+	<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+				<td>handle</td>
+				<td class="col-xs-1">GP30</td>
+				<td class="col-xs-1">win</td>
+				<td class="col-xs-1">top5</td>
+				<td class="col-xs-1">top10</td>
+				<td class="col-xs-1">参加回数（正スコア）</td>
+			</tr>
+		</thead>
+		<tbody>
+<%- persons.each do |person| -%>
+<tr>
+	<td><span class="username" style="color:<%= person.css_color %>;"><%= person.name %></span></td>
+	<td><%= person.sum %></td>
+	<td><%= person.win %></td>
+	<td><%= person.top5 %></td>
+	<td><%= person.top10 %></td>
+	<td><%= person.count %></td>
+</tr>
+<%- end -%>			
+		</tbody>
+	</table>
+	</div>
+</body>
+</html>
